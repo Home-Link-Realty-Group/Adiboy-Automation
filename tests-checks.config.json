@@ -1,0 +1,47 @@
+{
+  "threshold": 2,
+  "watchIntervalMs": 60000,
+  "notifications": {
+    "popupOnFailure": true
+  },
+  "profiles": {
+    "quick": {
+      "description": "Fast local checks for iteration",
+      "publishLatest": true,
+      "steps": [
+        {
+          "id": "workspace",
+          "command": "npm run workspace:check"
+        },
+        {
+          "id": "typecheck",
+          "command": "npm run typecheck"
+        },
+        {
+          "id": "tests",
+          "command": "npm run test:auth"
+        }
+      ]
+    },
+    "full": {
+      "description": "Full local reconstruction quality gate",
+      "publishLatest": true,
+      "steps": [
+        {
+          "id": "b03",
+          "command": "npm run b03:check"
+        }
+      ]
+    },
+    "ci": {
+      "description": "CI gate for pull requests and scheduled checks",
+      "publishLatest": true,
+      "steps": [
+        {
+          "id": "b03",
+          "command": "npm run b03:check"
+        }
+      ]
+    }
+  }
+}

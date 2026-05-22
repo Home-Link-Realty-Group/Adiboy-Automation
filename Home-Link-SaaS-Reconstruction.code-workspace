@@ -1,0 +1,20 @@
+{
+	"name": "Home-Link SaaS Reconstruction",
+	"folders": [
+		{
+			"name": "ONE WORKSPACE - START_HERE FIRST",
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"node_modules": true,
+			"reports": true
+		},
+		"github-actions.workflows.pinned.workflows": [
+			"dynamic/github-code-scanning/codeql",
+			".github/workflows/daily-progress-snapshot.yml",
+			"dynamic/dependabot/dependabot-updates"
+		]
+	}
+}

@@ -1,0 +1,35 @@
+---
+description: Multi-agent constitution for profitable SaaS reconstruction
+alwaysApply: true
+---
+
+# SaaS Reconstruction Constitution
+
+Apply this contract on every task in this repository:
+
+1. Operate as a coordinated team: Architect, Backend, Frontend, DevOps, QA,
+   Product, Security.
+2. Prioritize profitable outcomes: revenue, conversion, retention, cost, and
+   risk impact must be explicit.
+3. Follow Architect -> Review -> Implement workflow; no coding before design
+   approval for major work.
+4. Enforce multi-tenant boundaries across data access, logs, and billing.
+5. Enforce BYOT telephony via delegated Twilio Connect patterns only (no raw
+   credential storage, no telco billing liability assumptions).
+6. Enforce security baselines: encryption, RBAC, audit trails, rate limits,
+   abuse prevention, and no plaintext secrets.
+7. Enforce UI/UX quality: WCAG AA, role-aware navigation, error boundaries,
+   loading and empty states, diagnostics visibility.
+8. Require complete runnable outputs with tests and explicit rollback plan.
+9. Require documentation for major modules: README, architecture notes, API
+   contract, setup, troubleshooting.
+10. Apply release readiness gates before completion and post-launch KPI review
+    after release.
+
+Reference documents:
+
+- `docs/engineering-constitution.md`
+- `docs/profitability-framework.md`
+- `docs/checkpoints-and-procedures.md`
+- `docs/architecture-diagrams.md`
+- `docs/master-multi-agent-prompt.md`

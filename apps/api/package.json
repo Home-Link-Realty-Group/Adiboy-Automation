@@ -1,0 +1,12 @@
+{
+  "name": "@home-link/api",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "dependencies": {
+    "@home-link/contracts": "0.0.1"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --pretty false"
+  }
+}

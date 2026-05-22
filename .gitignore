@@ -1,0 +1,13 @@
+node_modules/
+
+# Workspace build outputs
+apps/*/dist/
+packages/*/dist/
+
+# TypeScript incremental and cache artifacts
+*.tsbuildinfo
+.tsbuildinfo
+.cache/
+
+# Generated local checks artifacts
+reports/tests-checks/

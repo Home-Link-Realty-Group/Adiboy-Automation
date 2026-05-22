@@ -1,0 +1,49 @@
+{
+  "name": "home-link-saas-reconstruction",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "prepare": "husky",
+    "workflows:convert": "node convert-workflows.cjs workflows",
+    "workflows:clean": "node clean-workflows.cjs workflows workflows-cleaned",
+    "workflows:clean:py": "node clean-workflows-py.cjs workflows workflows-cleaned",
+    "progress:snapshot": "node scripts/daily-progress-snapshot.mjs",
+    "workspace:check": "node scripts/verify-workspace.mjs",
+    "typecheck": "tsc -b tsconfig.workspaces.json --pretty false",
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:auth": "vitest run apps/api/src/index.test.ts packages/contracts/src/access-audit.test.ts packages/contracts/src/access-guard.test.ts packages/contracts/src/auth-context.test.ts packages/contracts/src/bootstrap-ingress.test.ts packages/contracts/src/privileged-audit.test.ts packages/contracts/src/tenant-context.test.ts",
+    "format:check": "prettier --check \"package.json\" \"tsconfig*.json\" \"vitest.config.ts\" \"eslint.config.mjs\" \"lint-staged.config.mjs\" \"*.cjs\" \"apps/**/*.{ts,tsx,json}\" \"packages/**/*.{ts,tsx,json}\" \".github/workflows/*.yml\" \"scripts/**/*.mjs\"",
+    "bootstrap:check": "npm run workspace:check && npm run typecheck && npm run lint && npm run test:coverage && npm run format:check",
+    "b03:check": "npm run bootstrap:check && npm run test:auth",
+    "checks:run": "node scripts/tests-checks-orchestrator.mjs --once --profile=full",
+    "checks:quick": "node scripts/tests-checks-orchestrator.mjs --once --profile=quick",
+    "checks:full": "node scripts/tests-checks-orchestrator.mjs --once --profile=full",
+    "checks:ci": "node scripts/tests-checks-orchestrator.mjs --once --profile=ci --force-run",
+    "checks:watch": "node scripts/tests-checks-orchestrator.mjs --watch --profile=full",
+    "checks:watch:quick": "node scripts/tests-checks-orchestrator.mjs --watch --profile=quick",
+    "checks:watch:fast": "node scripts/tests-checks-orchestrator.mjs --watch --profile=full --interval-ms=15000",
+    "backlog:sync": "node scripts/sync-backlog-to-issues.mjs",
+    "backlog:sync:dry": "node scripts/sync-backlog-to-issues.mjs --dry-run"
+  },
+  "dependencies": {
+    "mammoth": "^1.12.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@types/node": "^22.13.5",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/eslint-plugin": "^1.4.3",
+    "eslint": "^9.26.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.0",
+    "vitest": "^3.2.0"
+  }
+}
