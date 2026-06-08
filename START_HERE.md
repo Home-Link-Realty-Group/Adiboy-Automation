@@ -12,10 +12,10 @@ desktop. That shortcut opens the one screen for this workspace.
 ## One Workspace
 
 - Repository: `Home-Link-Realty-Group/Wholesaler-Pro`
-- Local Cursor Cloud path: `/workspace`
+- Local Cloud path: `/workspace`
 - Active reconstruction branch: `b01-bootstrap-upgrades`
 - Active PR: `https://github.com/Home-Link-Realty-Group/Wholesaler-Pro/pull/16`
-- Cursor/VS Code workspace file: `Home-Link-SaaS-Reconstruction.code-workspace`
+- VS Code workspace file: `Home-Link-SaaS-Reconstruction.code-workspace`
 
 Open this repository through `Home-Link-SaaS-Reconstruction.code-workspace`.
 Do not start from old chat claims, screenshots, random folders, or legacy branch
@@ -45,7 +45,7 @@ in the backlog.
 
 ## Agent Rule
 
-Every Cursor agent must begin by reading this file and must keep work inside
+Every agent must begin by reading this file and must keep work inside
 this repository unless the user explicitly says otherwise.
 
 If the branch, docs, or status conflict, pause and reconcile
