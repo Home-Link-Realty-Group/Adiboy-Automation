@@ -88,7 +88,10 @@ function generateSessionId() {
   // Check for existing session in sessionStorage
   let sessionId = sessionStorage.getItem('journey_session_id');
   if (!sessionId) {
-    sessionId = 'sess_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    const randomBytes = new Uint8Array(8);
+    crypto.getRandomValues(randomBytes);
+    const randomSuffix = Array.from(randomBytes, b => b.toString(16).padStart(2, '0')).join('');
+    sessionId = 'sess_' + Date.now() + '_' + randomSuffix;
     sessionStorage.setItem('journey_session_id', sessionId);
   }
   return sessionId;
